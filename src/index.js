@@ -1,17 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from 'react'
+import { HashRouter } from "react-router-dom";
+import { Provider } from 'react-redux'
+import { persistor } from './frontend/store/store'
+import { PersistGate } from 'redux-persist/integration/react'
+import Entry from "./frontend/pages/entry";
 
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+const Index = ({ store }) => (
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
+      <HashRouter>
+        <App />
+      </HashRouter>
+    </PersistGate>
+  </Provider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+export default Index;
