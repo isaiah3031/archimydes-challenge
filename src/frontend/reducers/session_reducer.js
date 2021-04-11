@@ -4,7 +4,7 @@ const sessionReducer = (state = {}, action) => {
   Object.freeze(state)
 
   switch (action.type) {
-    case (action == types.RECEIVE_CURRENT_USER):
+    case (types.RECEIVE_CURRENT_USER):
       return action.user
     default:
       return state

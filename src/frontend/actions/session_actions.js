@@ -6,5 +6,8 @@ export const receiveCurrentUser = user => ({
   user
 })
 
-export const loginUser = user => dispatch =>
-  login(user).then(user => dispatch(receiveCurrentUser(user)))
+export const loginUser = user => dispatch => {
+  login(user).then(user => {
+    return dispatch(receiveCurrentUser(user))
+  })
+}

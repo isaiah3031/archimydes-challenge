@@ -1,19 +1,20 @@
 import { connect } from 'react-redux'
 import { fetchStoryList } from '../../actions/story_actions'
-import LoginForm from './login_form'
+import StoryList from './story_list'
 
 const mapStateToProps = state => ({
   currentUser: state.session,
   stories: state.entities.stories
 })
 
+
 const mapDispatchToProps = dispatch => ({
   fetchStoryList: () => dispatch(fetchStoryList())
 })
 
-const LoginFormContainer = connect(
+const StoryFormContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(LoginForm)
+)(StoryList)
 
-export default LoginFormContainer;
+export default StoryFormContainer;

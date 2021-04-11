@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { useToggle } from 'react-use'
 import './login_form.scss'
 
 const LoginForm = ({ loginUser }) => {
+  const history = useHistory()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isAdmin, toggleAdmin] = useToggle(false)
