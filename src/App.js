@@ -1,14 +1,18 @@
-import logo from './logo.svg';
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
+import { HashRouter } from 'react-router-dom'
 import './App.css';
-import Root from './frontend/pages/root'
-import { store } from './frontend/store/store'
+import Entry from './frontend/components/entry'
+import { store, persistor } from './frontend/store/store'
 
-function App() {
-  // window.getState = store.getState
-  // window.d = store.dispatch
-  return (
-      <Root store={store} />
-  );
-}
+const App = () => (
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
+      <HashRouter>
+        <Entry />
+      </HashRouter>
+    </PersistGate>
+  </Provider>
+);
 
 export default App;
