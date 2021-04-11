@@ -26,10 +26,13 @@ const LoginForm = ({ loginUser }) => {
       placeholder='password'
       name='password'
     />
-    <button onClick={() => toggleAdmin()}>
-      {adminButtonText()}
-    </button>
-    <button onClick={() => handleSubmit()}>Login</button>
+    <div>
+      <button onClick={() => toggleAdmin()}>
+        {adminButtonText()}
+      </button>
+      <button onClick={() => handleSubmit()}>Login</button>
+    </div>
+
   </div>
 }
 
