@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
 import { useToggle } from 'react-use'
+import './login_form.scss'
 
 const LoginForm = ({ loginUser }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isAdmin, toggleAdmin] = useToggle(false)
 
-  const adminButtonText = () => {
-    return isAdmin ? 'trueUser Login' : 'falseAdmin Login'
-  }
+  const adminButtonText = () => isAdmin ? 'Toggle to User' : 'Toggle To Admin'
+
+  const formHeaderText = () => isAdmin ? 'Admin Login' : 'User Login'
 
   const handleSubmit = () => {
-    loginUser({ email: email, password: password, isAdmin: true })
+    loginUser({ email: email, password: password, isAdmin: isAdmin })
   }
 
-  return <div>
+  return <div className='login_form'>
+    <h2>{formHeaderText()}</h2>
     <input onChange={(e) => setEmail(e.target.value)}
       placeholder='name'
       name='email'
