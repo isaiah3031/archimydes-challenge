@@ -1,6 +1,6 @@
 ### The hardest part was
 
-Leaving things undone to meet the deadline. Still code isn't the type of thing you can tweak until the very last minute.
+Styling things at the bare minimum to reach the deadline. Still code isn't the type of thing you can tweak until the very last minute.
 
 Learning to communicate with the API. There was a little more auth work to be done on the frontend side than I'm used to. Submitting auth headers and remembering to set the content type fixed this problem. 
 
