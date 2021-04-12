@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 
 const StoryList = ({ currentUser, storyList, fetchStoryList }) => {
+  const history = useHistory()
   useEffect(() => {
     fetchStoryList()
   }, [])
@@ -10,7 +12,7 @@ const StoryList = ({ currentUser, storyList, fetchStoryList }) => {
       {Object.values(storyList).map(story => <p>{story.summary}</p>)}
     </div>
   } catch (error) {
-    return null
+    history.push('/createStory')
   }
 }
 

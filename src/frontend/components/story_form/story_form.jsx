@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 const StoryForm = ({ createStory }) => {
+  const history = useHistory()
   const [summary, setSummary] = useState('')
   const [description, setDescription] = useState('')
   const [type, setType] = useState('')
@@ -13,10 +15,11 @@ const StoryForm = ({ createStory }) => {
       summary: summary,
       description: description,
       type: type,
-      complexity: parseInt(complexity),
+      complexity: complexity,
       estTime: estTime,
-      cost: cost
+      cost: parseInt(cost)
     })
+    history.push('/')
   }
 
   return <div>
@@ -33,13 +36,13 @@ const StoryForm = ({ createStory }) => {
       <option value='enhancement'>enhancement</option>
       <option value='bugfix'>bugfix</option>
       <option value='development'>development</option>
-      <option value='QA'>QA</option>
+      <option value='qa'>QA</option>
     </select>
     <select name='complexity' onChange={(e) => setComplexity(e.target.value)}>
       <option selected disabled>Complexity</option>
-      <option selected value='Low'>Low</option>
-      <option value='Mid'>Mid</option>
-      <option value='High'>High</option>
+      <option value='low'>Low</option>
+      <option value='mid'>Mid</option>
+      <option value='high'>High</option>
     </select>
     <input placeholder='estTime' name='estTime' onChange={(e) => setEstTime(e.target.value)} />
     <input placeholder='cost' name='cost' onChange={(e) => setCost(e.target.value)} />

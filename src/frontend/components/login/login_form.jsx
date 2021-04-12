@@ -15,6 +15,7 @@ const LoginForm = ({ loginUser }) => {
 
   const handleSubmit = () => {
     loginUser({ email: email, password: password, isAdmin: isAdmin })
+    history.push('/')
   }
 
   return <div className='login_form'>
