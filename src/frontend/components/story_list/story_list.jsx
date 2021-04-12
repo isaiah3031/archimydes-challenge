@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import StoryListItem from './story_list_item'
 
 const StoryList = ({ currentUser, stories, fetchStoryList }) => {
-  const history = useHistory()
   useEffect(() => {
     fetchStoryList()
   }, [])
 
-  const tableHeaders = ['id', 'complexity', 'type', 'cost', 'est hours', 'summary', 'description']
+  const tableHeaders = ['id', 'estimatedHrs', 'summary', 'description', 'types', 'complexity', 'cost']
 
   try {
-    return <div className='table'>
-      {tableHeaders.map(column => <li className={`table-${column}`}>{column}</li>)}
-      {Object.values(stories).map(story => <p>{story.summary}</p>)}
-    </div>
+    return <table>
+      <tr>
+        {tableHeaders.map(column => <th>{column}</th>)}
+      </tr>
+      {Object.values(stories).map(story => <tr><StoryListItem story={story} /></tr>)}
+    </table>
   } catch (error) {
     return null
   }

@@ -12,7 +12,7 @@ const StoryForm = ({ createStory }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    debugger
+
     createStory({
       summary: summary,
       description: description,

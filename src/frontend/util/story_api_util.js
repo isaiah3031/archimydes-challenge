@@ -8,10 +8,12 @@ export const fetchStoryList = () =>
     headers: authHeader()
   })
 
-export const createStory = (story) =>
-  $.ajax({
+export const createStory = (story) => {
+  debugger
+  return $.ajax({
     type: 'POST',
     url: 'http://localhost:3000/api/v1/stories',
     data: story,
     headers: authHeader()
   })
+}

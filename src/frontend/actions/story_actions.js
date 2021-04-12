@@ -9,5 +9,6 @@ const receiveStoryList = (stories) => ({
 export const fetchStoryList = () => dispatch =>
   StoryAPIUtil.fetchStoryList().then(stories => dispatch(receiveStoryList(stories)))
 
-export const createStory = (story) => dispatch =>
-  StoryAPIUtil.createStory(story)
+export const createStory = (story) => dispatch => {
+  return StoryAPIUtil.createStory(story)
+}
