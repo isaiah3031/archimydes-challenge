@@ -4,8 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { store } from './frontend/store/store'
+import $ from 'jquery'
+import { receiveCurrentUser } from './frontend/actions/session_actions'
+// window.receiveCurrentUser = receiveCurrentUser
+// window.getState = store.getState;
+// window.dispatch = store.dispatch;
 
-
+// window.$ = $
 ReactDOM.render(
   <React.StrictMode>
     <App store={store} />
