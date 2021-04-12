@@ -1,0 +1,28 @@
+.story-detail {
+  width: 90%;
+  margin: 0 auto;
+  h3 {
+    font-weight: 400;
+  }
+  .story-detail__content {
+  }
+}
+
+button {
+  width: 100px;
+}
+.red-btn {
+  color: white;
+  background-color: red;
+}
+
+.green-btn {
+  color: white;
+  background-color: green;
+}
+
+@media only screen and (min-width: 600px) {
+  .story-detail {
+    width: 50%;
+  }
+}

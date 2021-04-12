@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
+import './story_detail.scss'
 
 const StoryDetail = ({ story, fetchStory, editStory }, props) => {
   useEffect(() => {
@@ -14,11 +15,13 @@ const StoryDetail = ({ story, fetchStory, editStory }, props) => {
   }
 
   try {
-    return <div>
+    return <div className='story-detail'>
       <h2>Admin Story View Page</h2>
-      <div className='story-detail'>
-        <h2>{story.summary}</h2>
-        <p>{story.description}</p>
+      <div className='story-detail__contents'>
+        <section className='story-detail__text'>
+          <p>{story.summary}</p>
+          <p>{story.description}</p>
+        </section>
         <table>
           <tr><th>ID:</th><td>{story.id}</td></tr>
           <tr><th>Complexity:</th><td>{story.type}</td></tr>
@@ -32,7 +35,7 @@ const StoryDetail = ({ story, fetchStory, editStory }, props) => {
         <button className='green-btn' value='accepted'
           onClick={e => handleSubmit(e)}>Accept</button>
       </div>
-    </div>
+    </div >
   } catch (error) {
     return null
   }
