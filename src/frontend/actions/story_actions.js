@@ -15,7 +15,7 @@ export const fetchStoryList = () => dispatch =>
   StoryAPIUtil.fetchStoryList().then(stories => dispatch(receiveStoryList(stories)))
 
 export const createStory = (story) => dispatch => {
-  return StoryAPIUtil.createStory(story).then(story => dispatch(receiveStory(story)))
+  return StoryAPIUtil.createStory(story).then(story => dispatch(receiveStoryList(story)))
 }
 
 export const editStory = (id, story) => dispatch => {
@@ -25,5 +25,5 @@ export const editStory = (id, story) => dispatch => {
 }
 
 export const fetchStory = (id) => dispatch => {
-  return StoryAPIUtil.getStory(id).then(story => dispatch(receiveStory))
+  return StoryAPIUtil.getStory(id).then(story => dispatch(receiveStory(story)))
 }

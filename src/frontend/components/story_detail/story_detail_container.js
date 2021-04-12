@@ -1,13 +1,15 @@
 import { connect } from 'react-redux'
-import { editStory } from '../../action/story_actions'
+import { editStory, fetchStory } from '../../actions/story_actions'
+import StoryDetail from './story_detail'
 
 const mapStateToProps = state => ({
   isAdmin: state.session.isAdmin,
-  stories: state.entities.stories
+  story: state.entities.stories
 })
 
 const mapDispatchToProps = dispatch => ({
-  editStory: (id, status) => dispatch(editStory(id, status))
+  editStory: (id, status) => dispatch(editStory(id, status)),
+  fetchStory: (id) => dispatch(fetchStory(id))
 })
 
 const StoryDetailContainer = connect(

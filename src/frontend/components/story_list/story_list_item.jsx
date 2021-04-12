@@ -7,7 +7,7 @@ const StoryListItem = ({ story, isAdmin }) => {
 
   const rowColor = () => {
     if (story.status === undefined || !isAdmin) return ''
-    return story.status ? 'row-red' : 'row-green'
+    return story.status === 'rejected' ? 'row-red' : 'row-green'
   }
 
   return <>

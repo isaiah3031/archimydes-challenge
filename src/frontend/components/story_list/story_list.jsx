@@ -44,10 +44,10 @@ const StoryList = ({ currentUser, stories, fetchStoryList }) => {
           </th>
         )}
       </tr>
-      
+
       {Object.values(storyList()).map(story =>
         <tr>
-          <StoryListItem isAdmin={currentUser.isAdmin} story={story} />
+          <StoryListItem isAdmin={currentUser.role === 'Admin'} story={story} />
         </tr>)
       }
     </table>

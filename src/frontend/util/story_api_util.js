@@ -20,15 +20,15 @@ export const createStory = (story) =>
 export const setStatus = (id, status) =>
   $.ajax({
     contentType: 'application/json',
-    type: 'POST',
-    url: `http://localhost:3000/api/v1/${id}/${status}`,
+    type: 'PUT',
+    url: `http://localhost:3000/api/v1/stories/${id}/${status}`,
     headers: authHeader()
   })
 
 export const getStory = (id) =>
   $.ajax({
     contentType: 'application/json',
-    type: 'POST',
-    url: `http://localhost:3000/api/v1/${id}`,
+    type: 'GET',
+    url: `http://localhost:3000/api/v1/stories/${id}`,
     headers: authHeader()
   })
