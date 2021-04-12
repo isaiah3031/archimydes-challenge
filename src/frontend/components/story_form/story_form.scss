@@ -1,0 +1,16 @@
+.story-form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 10px auto;
+
+  input,
+  select,
+  button {
+    margin: 10px 0;
+  }
+
+  textarea {
+    height: 100%;
+  }
+}

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import './story_form.scss'
 
-const StoryForm = ({ createStory }) => {
+const StoryForm = ({ createStory, isAdmin }) => {
   const history = useHistory()
   const [summary, setSummary] = useState('')
   const [description, setDescription] = useState('')
@@ -23,17 +24,18 @@ const StoryForm = ({ createStory }) => {
     }).then(() => history.push('/'))
   }
 
-  return <div>
-    <input placeholder='summary' name='summary' onChange={(e) => setSummary(e.target.value)} />
+  return <div className='story-form'>
+    <h2>Story Form</h2>
+    <input placeholder='Summary' name='summary' onChange={(e) => setSummary(e.target.value)} />
     <textarea
-      placeholder='description'
+      placeholder='Description'
       name='description'
       onChange={(e) => setDescription(e.target.value)}>
     </textarea>
     <select name='type' onChange={(e) =>
       setType(e.target.value)
     }>
-      <option selected disabled>type</option>
+      <option selected disabled>Type</option>
       <option value='enhancement'>enhancement</option>
       <option value='bugfix'>bugfix</option>
       <option value='development'>development</option>

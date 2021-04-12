@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import LoginFormContainer from './login/login_form_container'
 import StoryListContainer from './story_list/story_list_container'
 import StoryFormContainer from './story_form/story_form_container'
@@ -8,6 +8,7 @@ import StoryDetailContainer from './story_detail/story_detail_container'
 
 const Entry = () => {
   return <div>
+    <button><Link to='/login'>Login</Link></button>
     <Route exact path='/login' component={LoginFormContainer} />
     <PrivateRoute exact path='/createStory' component={StoryFormContainer} />
     <PrivateRoute exact path='/' component={StoryListContainer} />
