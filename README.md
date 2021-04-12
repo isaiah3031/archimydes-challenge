@@ -1,15 +1,11 @@
-### The hardest part was
+### The most challenging part was
 
-Styling things at the bare minimum to reach the deadline. Still code isn't the type of thing you can tweak until the very last minute.
-
-Learning to communicate with the API. There was a little more auth work to be done on the frontend side than I'm used to. Submitting auth headers and remembering to set the content type fixed this problem. 
-
-Also looking through the API files gave me a little hope because of how readable it was. I can definetly see some similarities between Express and Rails.
+Leaving things unstyled or not styled the way I wanted in favor of reaching the deadline. I did this because tweaking things up to the last minute seems risky.
 
 ## Overall
 
-I'm sure I could do more with this if given more time. The functionality is all there I believe but it looks like it was designed by a developer. The AdobeXD files I made yesterday were pretty minimalistic but I abandoned some of the more elaborate ones to make sure I had time to submit everything.
+I'm sure I could do more with this if given more time. The functionality is all there, I believe, but it looks like a developer designed it. The AdobeXD files I made yesterday were pretty minimalistic, but I abandoned some of the more elaborate ones to make sure I had time to submit everything.
 
-This project helped me realize how much further I've came since building my portfolio project. Which of course means I need to create some new things that are more representative of my skills. 
+This project helped me realize how much further I've come since building my portfolio project. So, I plan to create some new projects for my portfolio that will represent my skills more. 
 
 Thank you for the opportunity!
