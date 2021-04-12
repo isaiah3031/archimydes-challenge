@@ -10,7 +10,9 @@ const StoryForm = ({ createStory }) => {
   const [estTime, setEstTime] = useState('')
   const [cost, setCost] = useState('')
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    debugger
     createStory({
       summary: summary,
       description: description,
@@ -46,7 +48,7 @@ const StoryForm = ({ createStory }) => {
     </select>
     <input placeholder='estTime' name='estTime' onChange={(e) => setEstTime(e.target.value)} />
     <input placeholder='cost' name='cost' onChange={(e) => setCost(e.target.value)} />
-    <button onClick={() => handleSubmit()}>Submit</button>
+    <button onClick={(e) => handleSubmit(e)}>Submit</button>
   </div>
 }
 

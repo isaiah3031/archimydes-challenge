@@ -8,6 +8,7 @@ export const receiveCurrentUser = user => ({
 
 export const loginUser = user => dispatch => {
   login(user).then(user => {
+    localStorage.setItem('user', JSON.stringify(user));
     return dispatch(receiveCurrentUser(user))
   })
 }
