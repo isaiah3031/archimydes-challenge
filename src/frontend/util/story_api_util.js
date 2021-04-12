@@ -9,11 +9,11 @@ export const fetchStoryList = () =>
   })
 
 export const createStory = (story) => {
-  debugger
   return $.ajax({
+    contentType: 'application/json',
     type: 'POST',
     url: 'http://localhost:3000/api/v1/stories',
-    data: story,
+    data: JSON.stringify(story),
     headers: authHeader()
   })
 }

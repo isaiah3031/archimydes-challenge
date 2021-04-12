@@ -7,21 +7,20 @@ const StoryForm = ({ createStory }) => {
   const [description, setDescription] = useState('')
   const [type, setType] = useState('')
   const [complexity, setComplexity] = useState('')
-  const [estTime, setEstTime] = useState('')
+  const [estimatedHrs, setestimatedHrs] = useState('')
   const [cost, setCost] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
     createStory({
-      summary: summary,
-      description: description,
-      type: type,
-      complexity: complexity,
-      estTime: estTime,
-      cost: parseInt(cost)
-    })
-    history.push('/')
+      'summary': summary,
+      'description': description,
+      'type': type,
+      'complexity': complexity,
+      // 'estimatedHrs': estimatedHrs,
+      // 'cost': parseInt(cost)
+    }).then(() => history.push('/'))
   }
 
   return <div>
@@ -46,8 +45,6 @@ const StoryForm = ({ createStory }) => {
       <option value='mid'>Mid</option>
       <option value='high'>High</option>
     </select>
-    <input placeholder='estTime' name='estTime' onChange={(e) => setEstTime(e.target.value)} />
-    <input placeholder='cost' name='cost' onChange={(e) => setCost(e.target.value)} />
     <button onClick={(e) => handleSubmit(e)}>Submit</button>
   </div>
 }

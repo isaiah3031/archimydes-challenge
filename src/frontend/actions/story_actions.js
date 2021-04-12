@@ -6,9 +6,14 @@ const receiveStoryList = (stories) => ({
   stories
 })
 
+const receiveStory = (story) => ({
+  type: types.RECEIVE_STORY,
+  story
+})
+
 export const fetchStoryList = () => dispatch =>
   StoryAPIUtil.fetchStoryList().then(stories => dispatch(receiveStoryList(stories)))
 
 export const createStory = (story) => dispatch => {
-  return StoryAPIUtil.createStory(story)
+  return StoryAPIUtil.createStory(story).then(story => dispatch(receiveStory(story)))
 }

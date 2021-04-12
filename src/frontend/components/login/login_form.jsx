@@ -14,7 +14,7 @@ const LoginForm = ({ loginUser }) => {
   const formHeaderText = () => isAdmin ? 'Admin Login' : 'User Login'
 
   const handleSubmit = () => {
-    loginUser({ email: email, password: password, isAdmin: isAdmin })
+    loginUser({ 'email': email, 'password': password, 'isAdmin': isAdmin })
     history.push('/')
   }
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import StoryListItem from './story_list_item'
 
 const StoryList = ({ currentUser, stories, fetchStoryList }) => {
@@ -6,7 +6,17 @@ const StoryList = ({ currentUser, stories, fetchStoryList }) => {
     fetchStoryList()
   }, [])
 
-  const tableHeaders = ['id', 'estimatedHrs', 'summary', 'description', 'types', 'complexity', 'cost']
+  const [sortBy, setSortBy] = useState('id')
+
+  const tableHeaders = [
+    'id',
+    'estimatedHrs',
+    'summary',
+    'description',
+    'types',
+    'complexity',
+    'cost'
+  ]
 
   try {
     return <table>
