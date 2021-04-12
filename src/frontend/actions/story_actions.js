@@ -17,3 +17,13 @@ export const fetchStoryList = () => dispatch =>
 export const createStory = (story) => dispatch => {
   return StoryAPIUtil.createStory(story).then(story => dispatch(receiveStory(story)))
 }
+
+export const editStory = (id, story) => dispatch => {
+  return StoryAPIUtil.setStatus(id, story).then(story =>
+    dispatch(receiveStory(story))
+  )
+}
+
+export const fetchStory = (id) => dispatch => {
+  return StoryAPIUtil.getStory(id).then(story => dispatch(receiveStory))
+}

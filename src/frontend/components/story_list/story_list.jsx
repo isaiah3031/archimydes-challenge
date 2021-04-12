@@ -44,7 +44,12 @@ const StoryList = ({ currentUser, stories, fetchStoryList }) => {
           </th>
         )}
       </tr>
-      {Object.values(storyList()).map(story => <tr><StoryListItem story={story} /></tr>)}
+      
+      {Object.values(storyList()).map(story =>
+        <tr>
+          <StoryListItem isAdmin={currentUser.isAdmin} story={story} />
+        </tr>)
+      }
     </table>
   } catch (error) {
     return null
